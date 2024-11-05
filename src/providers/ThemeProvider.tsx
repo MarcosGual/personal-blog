@@ -3,21 +3,20 @@
 import { getFromLocalStorage } from "@/context/ThemeContext";
 import { useThemeContext } from "@/hooks/useThemeContext"
 import { ChildrenProps } from "@/types/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ThemeProvider: React.FC<ChildrenProps> = ({ children }: ChildrenProps) => {
-    const { darkThemeOn, setDarkThemeOn } = useThemeContext();
+    const { darkThemeOn } = useThemeContext();
+    const [mounted, setMounted] = useState<boolean>(false);
 
     useEffect(() => {
-        const savedThemeConfig = getFromLocalStorage();
-        if (savedThemeConfig !== null) {
-            setDarkThemeOn(savedThemeConfig);
-        }
+        setMounted(true);
     }, [])
 
-    return <div className={darkThemeOn ? 'dark' : 'light'}>
-        {children}
-    </div>
+    if (mounted)
+        return <div className={darkThemeOn ? 'dark' : 'light'}>
+            {children}
+        </div>
 }
 
 export default ThemeProvider;

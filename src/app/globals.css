@@ -44,16 +44,6 @@ a {
   padding: 0 5rem;
 }
 
-@keyframes circle-grow {
-  0% {
-    clip-path: circle(0% at 50% 0%);
-  }
-  
-  100% {
-    clip-path: circle(150% at 50% 0%);
-  }
-}
-
 @media screen and (max-width: 1536px) {
   .wrapper {
     max-width: 1366px;

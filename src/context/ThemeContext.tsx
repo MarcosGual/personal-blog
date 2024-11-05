@@ -1,29 +1,43 @@
 "use client"
 
 import { ChildrenProps } from "@/types/react";
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 type ThemeContextType = {
-    darkThemeOn: boolean,
-    setDarkThemeOn: (value: boolean) => void
+    darkThemeOn: boolean | null,
+    toggle: (value: boolean) => void
 }
 
 export const ThemeContext = createContext<ThemeContextType | undefined>({
     darkThemeOn: false,
-    setDarkThemeOn: () => {} 
+    toggle: () => { }
 });
 
 export const getFromLocalStorage = () => {
-    if (typeof window !== undefined) {
-        const value = Boolean(window.localStorage.getItem("darkTheme"));
-        return value || false;
-    } else {
-        return false;
+    if (localStorage) {
+        const value = window.localStorage.getItem("darkTheme");
+        return value === "true";
     }
+    return false;
 }
 
 export const ThemeContextProvider = ({ children }: ChildrenProps) => {
-    const [darkThemeOn, setDarkThemeOn] = useState<boolean>(false);
+    const [darkThemeOn, setDarkThemeOn] = useState<boolean | null>(() => {
+        return getFromLocalStorage() || false;
+    })
 
-    return <ThemeContext.Provider value={{ darkThemeOn, setDarkThemeOn }}>{children}</ThemeContext.Provider>
+    const toggle = () => {
+        setDarkThemeOn(!darkThemeOn);
+    }
+
+    // useEffect(() => {
+    //     let localStorageSetting = getFromLocalStorage();
+    //     setDarkThemeOn(localStorageSetting);
+    // }, [])
+
+    useEffect(() => {
+        localStorage.setItem("darkTheme", darkThemeOn ? darkThemeOn.toString() : 'false');
+    }, [darkThemeOn])
+
+    return <ThemeContext.Provider value={{ darkThemeOn, toggle }}>{children}</ThemeContext.Provider>
 }

@@ -6,10 +6,10 @@ import { ThemeContext } from "@/context/ThemeContext";
 import { useThemeContext } from "@/hooks/useThemeContext";
 
 const ThemeToggle: React.FC = () => {
-    const {darkThemeOn, setDarkThemeOn} = useThemeContext();
+    const { darkThemeOn, toggle } = useThemeContext();
 
     return (<div>
-        <DarkSide duration={750} toggled={darkThemeOn} toggle={setDarkThemeOn} />
+        <DarkSide duration={750} toggled={darkThemeOn} toggle={toggle} />
     </div>)
 }
 
