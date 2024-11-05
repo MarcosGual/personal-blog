@@ -9,7 +9,7 @@ const ThemeToggle: React.FC = () => {
     const { darkThemeOn, toggle } = useThemeContext();
 
     return (<div>
-        <DarkSide duration={750} toggled={darkThemeOn} toggle={toggle} />
+        <DarkSide duration={750} toggled={!darkThemeOn} toggle={toggle} />
     </div>)
 }
 

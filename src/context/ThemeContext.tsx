@@ -23,17 +23,12 @@ export const getFromLocalStorage = () => {
 
 export const ThemeContextProvider = ({ children }: ChildrenProps) => {
     const [darkThemeOn, setDarkThemeOn] = useState<boolean | null>(() => {
-        return getFromLocalStorage() || false;
+        return getFromLocalStorage()||null;
     })
 
     const toggle = () => {
         setDarkThemeOn(!darkThemeOn);
     }
-
-    // useEffect(() => {
-    //     let localStorageSetting = getFromLocalStorage();
-    //     setDarkThemeOn(localStorageSetting);
-    // }, [])
 
     useEffect(() => {
         localStorage.setItem("darkTheme", darkThemeOn ? darkThemeOn.toString() : 'false');

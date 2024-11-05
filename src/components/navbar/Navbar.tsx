@@ -16,9 +16,9 @@ const Navbar: React.FC = () => {
             <div className={styles.logo}>programación pragmática</div>
             <div className={styles.links}>
                 <ThemeToggle />
-                <Link href="">Inicio</Link>
-                <Link href="">Contacto</Link>
-                <Link href="">Acerca de</Link>
+                <Link className={styles.link} href="">Inicio</Link>
+                <Link className={styles.link} href="">Contacto</Link>
+                <Link className={styles.link} href="">Acerca de</Link>
                 <AuthLinks />
             </div>
         </div>)
