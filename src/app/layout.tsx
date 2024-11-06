@@ -31,20 +31,6 @@ export default function RootLayout({
               </div>
             </div>
           </ThemeProvider>
-          <div className="container">
-            <div className="wrapper">
-              <Navbar />
-              {children}
-              <Footer />
-            </div>
-          </div>
-          <div className="container">
-            <div className="wrapper">
-              <Navbar />
-              {children}
-              <Footer />
-            </div>
-          </div>
         </ThemeContextProvider>
       </body>
     </html>

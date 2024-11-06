@@ -31,6 +31,13 @@ a {
   --softTextColor: #a5a5a5;
 }
 
+.light {
+  --bg: white;
+  --textColor: black;
+  --lightBg: #f0f0f0;
+  --lightTextColor: #636363;
+}
+
 .container {
   min-height: 100vh;
   background-color: var(--bg);
