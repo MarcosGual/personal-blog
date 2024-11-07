@@ -1,0 +1,45 @@
+.container{
+    margin-top: 1.8rem;
+}
+
+.title{
+    font-size: 6rem;
+}
+
+.post{
+    margin-top: 3.7rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.imgContainer{
+    flex: 1;
+    height: 500px;
+    position:relative;
+}
+
+.image{
+    object-fit: cover;
+}
+
+.textContainer{
+    flex: 1;
+}
+
+.postTitle{
+    font-size: 2.5rem;
+}
+
+.postPreview{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--softTextColor);
+}
+
+.button{
+    padding: 1rem 1.2rem;
+    border: none;
+    border-radius: 10%;
+    width: max-content;
+}
