@@ -17,4 +17,33 @@
 
 .textContainer{
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.date{
+    color: gray;
+}
+
+.category{
+    color:c crimson;
+    font-weight: 500;
+}
+
+.description{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--softTextColor);
+}
+
+.detail{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link{
+    border-bottom: 1px solid crimson;
+    width: max-content;
+    padding: 0.2rem 0;
 }

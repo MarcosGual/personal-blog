@@ -13,14 +13,16 @@ const Card: React.FC = () => {
                     <span>11.02.2024</span>
                     <span className={styles.category}>Cultura en Argentina</span>
                 </div>
-                <h2>Lorem ipsum dolor sit amet.</h2>
-                <p>
+                <Link href="/">
+                    <h2 className="">Lorem ipsum dolor sit amet.</h2>
+                </Link>
+                <p className={styles.description}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Fugiat ad dicta sunt inventore voluptas!
                     Eius non repellat quibusdam rerum atque sunt reiciendis.
                     Neque exercitationem placeat omnis dignissimos eum voluptatum quo.
                 </p>
-                <Link href="/">Leer más</Link>
+                <Link href="/" className={styles.link}>Leer más</Link>
             </div>
         </div>
     )
