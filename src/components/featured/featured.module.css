@@ -46,3 +46,31 @@
     border-radius: 10%;
     width: max-content;
 }
+
+@media screen and (max-width: 1280px) {
+    .title{
+        font-size: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .title{
+        font-size: 4rem;
+    }
+
+    .imgContainer{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .title{
+        font-size: 2.5rem;
+    }
+}
