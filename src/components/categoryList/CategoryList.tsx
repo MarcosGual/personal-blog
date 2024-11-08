@@ -17,7 +17,7 @@ const CategoryList: React.FC = () => {
                     />
                     estilo
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.style}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.fashion}`}>
                     <Image
                         src="/fashion.png"
                         alt=""
@@ -27,7 +27,7 @@ const CategoryList: React.FC = () => {
                     />
                     moda
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.style}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.food}`}>
                     <Image
                         src="/food.png"
                         alt=""
@@ -37,7 +37,7 @@ const CategoryList: React.FC = () => {
                     />
                     comida
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.style}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.travel}`}>
                     <Image
                         src="/travel.png"
                         alt=""
@@ -47,7 +47,17 @@ const CategoryList: React.FC = () => {
                     />
                     viajes
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.style}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.culture}`}>
+                    <Image
+                        src="/culture.png"
+                        alt=""
+                        width={32}
+                        height={32}
+                        className={styles.image}
+                    />
+                    viajes
+                </Link>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.coding}`}>
                     <Image
                         src="/coding.png"
                         alt=""
