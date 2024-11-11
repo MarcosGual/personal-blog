@@ -28,28 +28,28 @@
   border-radius: 50%;
 }
 
-.category.style {
-  background-color: #56c4fe32;
+.category.football {
+  background-color: var(--politics);
 }
 
-.category.fashion {
-  background-color: #fe565632;
+.category.history {
+  background-color: var(--history);
 }
 
-.category.food {
-  background-color: #fea25632;
+.category.politics {
+  background-color: var(--politics);
 }
 
-.category.travel {
-  background-color: #5659fe32;
+.category.economics {
+  background-color: var(--economics);
 }
 
-.category.culture {
-  background-color: #56fe9c32;
+.category.anything {
+  background-color: var(--anything);
 }
 
 .category.coding {
-  background-color: #fe56ed32;
+  background-color: var(--coding);
 }
 
 @media screen and (max-width: 1280px) {

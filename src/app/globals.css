@@ -5,6 +5,13 @@
   --textColor: black;
   --lightBg: #f1f1f1;
   --lightTextColor: #616161;
+  --economics: #5659fe32;
+  --politics: #fea25632;
+  --history: #fe565632;
+  --culture: #56fe9c32;
+  --coding: #fe56ed32;
+  --football: #56c4fe32;
+  --anything: #56fe9c32;
 }
 /* reseteo css */
 * {

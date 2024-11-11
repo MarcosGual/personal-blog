@@ -7,7 +7,7 @@ const CategoryList: React.FC = () => {
         <div className={styles.container}>
             <h1 className={styles.title}>Categorías Populares</h1>
             <div className={styles.categories}>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.style}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.football}`}>
                     <Image
                         src="/style.png"
                         alt=""
@@ -15,9 +15,9 @@ const CategoryList: React.FC = () => {
                         height={32}
                         className={styles.image}
                     />
-                    estilo
+                    fuchibol
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.fashion}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.history}`}>
                     <Image
                         src="/fashion.png"
                         alt=""
@@ -25,9 +25,9 @@ const CategoryList: React.FC = () => {
                         height={32}
                         className={styles.image}
                     />
-                    moda
+                    historia
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.food}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.politics}`}>
                     <Image
                         src="/food.png"
                         alt=""
@@ -35,9 +35,9 @@ const CategoryList: React.FC = () => {
                         height={32}
                         className={styles.image}
                     />
-                    comida
+                    política
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.travel}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.economics}`}>
                     <Image
                         src="/travel.png"
                         alt=""
@@ -45,9 +45,9 @@ const CategoryList: React.FC = () => {
                         height={32}
                         className={styles.image}
                     />
-                    viajes
+                    economía
                 </Link>
-                <Link href="blog?cat=style" className={`${styles.category} ${styles.culture}`}>
+                <Link href="blog?cat=style" className={`${styles.category} ${styles.anything}`}>
                     <Image
                         src="/culture.png"
                         alt=""
@@ -55,7 +55,7 @@ const CategoryList: React.FC = () => {
                         height={32}
                         className={styles.image}
                     />
-                    viajes
+                    cosas
                 </Link>
                 <Link href="blog?cat=style" className={`${styles.category} ${styles.coding}`}>
                     <Image
