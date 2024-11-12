@@ -16,7 +16,9 @@
 .items{
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 .item{
@@ -49,10 +51,19 @@
     border-radius: 0.6rem;
     font-size: 0.7rem;
     color: white;
+    width: max-content;
 }
 
-.category.travel{
-    
+.category.economics{
+    background-color: var(--economics);
+}
+
+.category.coding{
+    background-color: var(--coding);
+}
+
+.category.history{
+    background-color: var(--history);
 }
 
 .postTitle{
