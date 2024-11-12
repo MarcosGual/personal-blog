@@ -1,16 +1,6 @@
 .container{
     flex: 2;
-    margin-top: 5rem;
-}
-
-.title{
-    font-size: 1.8rem;
-}
-
-.subtitle{
-    color: gray;
-    font-size: 1rem;
-    font-weight: 400;
+    margin-top: 3.2rem;
 }
 
 .items{

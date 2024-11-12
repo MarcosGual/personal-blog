@@ -1,0 +1,66 @@
+.items{
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.imageContainer{
+    flex: 1;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.image{
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    object-fit: cover;
+}
+
+.textContainer{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.category{
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.6rem;
+    font-size: 0.7rem;
+    color: white;
+    width: max-content;
+}
+
+.category.economics{
+    background-color: var(--economics);
+}
+
+.category.coding{
+    background-color: var(--coding);
+}
+
+.category.history{
+    background-color: var(--history);
+}
+
+.postTitle{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--softTextColor);
+}
+
+.detail{
+    font-size: 0.8rem;
+}
+
+.date{
+    color: gray;
+}

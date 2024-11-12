@@ -1,0 +1,37 @@
+.categoryList {
+  margin-top: 35px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.categoryItem {
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.categoryItem.football {
+  background-color: var(--politics);
+}
+
+.categoryItem.history {
+  background-color: var(--history);
+}
+
+.categoryItem.politics {
+  background-color: var(--politics);
+}
+
+.categoryItem.economics {
+  background-color: var(--economics);
+}
+
+.categoryItem.anything {
+  background-color: var(--anything);
+}
+
+.categoryItem.coding {
+  background-color: var(--coding);
+}
