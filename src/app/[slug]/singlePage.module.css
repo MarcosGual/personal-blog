@@ -1,3 +1,37 @@
-.container{
-    
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.userImageContainer {
+  width: 3.2rem;
+  height: 3.2rem;
+  position: relative;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 3.2rem;
+}
+
+.imageContainer {
+  flex: 1;
+  height: 350px;
+  /* width: 350; */
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
 }
