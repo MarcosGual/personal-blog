@@ -32,6 +32,34 @@
   position: relative;
 }
 
+.avatar{
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .image {
   object-fit: cover;
+}
+
+.userTextContainer{
+  color: var(--softTextColor);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content{
+  display: flex;
+  gap: 3.2rem;
+}
+
+.post{
+  flex:5;
+  margin-top: 3.4rem;
+}
+
+.description>p{
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
 }
