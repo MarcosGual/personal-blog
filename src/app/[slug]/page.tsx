@@ -1,6 +1,7 @@
 import Menu from "@/components/Menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
+import Comments from "@/components/comments/Comments";
 
 const SinglePage: React.FC = () => {
   return (
@@ -58,6 +59,9 @@ const SinglePage: React.FC = () => {
               necessitatibus, sapiente dolorem repellendus sit animi dignissimos
               enim, quas odio.
             </p>
+          </div>
+          <div className={styles.comment}>
+            <Comments />
           </div>
         </div>
         <Menu />
