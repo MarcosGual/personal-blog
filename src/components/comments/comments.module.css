@@ -1,25 +1,33 @@
-.container{
+.container {
     margin-top: 3.2rem;
 }
 
-.title{
+.title {
     color: var(--softTextColor);
     margin-bottom: 2rem;
 }
 
-.write{
+.comments{
+    margin-top: 3rem;
+}
+
+.comment{
+    margin-bottom: 2.2rem;
+}
+
+.write {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
 }
 
-.input{
+.input {
     padding: 1.3rem;
     width: 100%;
 }
 
-.button{
+.button {
     padding: 1rem 1.3rem;
     font-weight: bold;
     border: none;
@@ -29,9 +37,35 @@
     cursor: pointer;
 }
 
-.user{
+.user {
     display: flex;
     align-items: center;
     gap: 1.3rem;
     margin-bottom: 1.3rem;
+}
+
+.image {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userInfo {
+    color: var(--softTextColor);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.date {
+    font-size: 0.8rem;
+}
+
+.userName {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.desc{
+    /* font-size: 1.1rem; */
+    font-weight: 300;
 }
