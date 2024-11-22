@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/dark-side.min.css");
+
 /* variables */
 :root {
   --bg: white;
@@ -13,6 +14,7 @@
   --football: #56c4fe32;
   --anything: #56fe9c32;
 }
+
 /* reseteo css */
 * {
   padding: 0;
@@ -81,4 +83,12 @@ a {
   .wrapper {
     max-width: 475px;
   }
+}
+
+.ql-container {
+  font-size: 1.6rem !important;
+}
+
+.quill>.ql-container>.ql-editor.ql-blank::before {
+  color: #b3b3b2;
 }
