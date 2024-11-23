@@ -1,5 +1,7 @@
 .container{
-
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .editor{
@@ -8,6 +10,13 @@
     height: 700px;
     position: relative;
 }
+
+.select{
+    margin-bottom: 3.2rem;
+    padding: 0.6rem 1.2rem;
+    margin-left: 3.2rem;
+    width: max-content;
+  }
 
 .button,.addButton{
     width: 2.2rem;
@@ -51,3 +60,16 @@
     width: 100%;
 }
 
+.publish{
+    font-size: 1.05rem;
+    position: absolute;
+    top: 1.9rem;
+    right: 1.2rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #1a8917;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    /* font-weight: 600; */
+    cursor: pointer;
+}
