@@ -21,7 +21,7 @@ const WritePage: React.FC = () => {
             <button className={styles.addButton}>
               <Image
                 src="/image.png"
-                alt="agregar post"
+                alt="agregar imagen"
                 width={16}
                 height={16}
               />
@@ -29,7 +29,7 @@ const WritePage: React.FC = () => {
             <button className={styles.addButton}>
               <Image
                 src="/external.png"
-                alt="agregar post"
+                alt="agregar link"
                 width={16}
                 height={16}
               />
@@ -37,7 +37,7 @@ const WritePage: React.FC = () => {
             <button className={styles.addButton}>
               <Image
                 src="/video.png"
-                alt="agregar post"
+                alt="agregar video"
                 width={16}
                 height={16}
               />
