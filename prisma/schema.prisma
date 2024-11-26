@@ -1,41 +1,59 @@
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
 }
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
+}
+
+model Account {
+    id                String  @id @default(cuid()) @map("_id")
+    userId            String  @db.ObjectId
+    type              String
+    provider          String
+    providerAccountId String
+    refresh_token     String?
+    access_token      String?
+    expires_at        Int?
+    token_type        String?
+    scope             String?
+    id_token          String?
+    session_State     String?
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Post {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  slug     String    @unique
-  title    String
-  body     String
-  author   User      @relation(fields: [authorId], references: [id])
-  authorId String    @db.ObjectId
-  comments Comment[]
+    id       String    @id @default(cuid()) @map("_id") @db.ObjectId
+    slug     String    @unique
+    title    String
+    body     String
+    author   User      @relation(fields: [authorId], references: [id])
+    authorId String    @db.ObjectId
+    comments Comment[]
 }
 
 model User {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  email   String   @unique
-  name    String?
-  address Address?
-  posts   Post[]
+    id       String    @id @default(cuid()) @map("_id") @db.ObjectId
+    email    String    @unique
+    name     String?
+    address  Address?
+    posts    Post[]
+    accounts Account[]
 }
 
 model Comment {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  comment String
-  post    Post   @relation(fields: [postId], references: [id])
-  postId  String @db.ObjectId
+    id      String @id @default(cuid()) @map("_id") @db.ObjectId
+    comment String
+    post    Post   @relation(fields: [postId], references: [id])
+    postId  String @db.ObjectId
 }
 
 // Address is an embedded document
 type Address {
-  street String
-  city   String
-  state  String
-  zip    String
+    street String
+    city   String
+    state  String
+    zip    String
 }
