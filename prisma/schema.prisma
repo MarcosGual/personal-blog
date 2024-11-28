@@ -93,3 +93,7 @@ type Address {
     state  String
     zip    String
 }
+
+type User_Data{
+    address Address
+}
