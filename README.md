@@ -16,9 +16,10 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Tecnologías Utilizadas
+### Applied Technologies
 
 - Next.js
+- Auth.js
 - MongoDB
 - Google Cloud
 - Typescript
