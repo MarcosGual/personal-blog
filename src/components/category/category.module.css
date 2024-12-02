@@ -1,0 +1,63 @@
+.category {
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+    gap: 0.6rem;
+    width: 15%;
+    height: 85px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  
+  .image {
+    border-radius: 50%;
+  }
+  
+  .category.football {
+    background-color: var(--politics);
+  }
+  
+  .category.history {
+    background-color: var(--history);
+  }
+  
+  .category.politics {
+    background-color: var(--politics);
+  }
+  
+  .category.economics {
+    background-color: var(--economics);
+  }
+  
+  .category.anything {
+    background-color: var(--anything);
+  }
+  
+  .category.coding {
+    background-color: var(--coding);
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .category{
+      width: 20%;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .category{
+      width: 25%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .category{
+      width: 45%;
+    }
+  }
+  
+  @media screen and (max-width: 640px) {
+    .category{
+      width: 100%;
+    }
+  }

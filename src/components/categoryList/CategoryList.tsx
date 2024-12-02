@@ -1,8 +1,9 @@
 import Link from "next/link";
 import styles from "./categoryList.module.css";
 import Image from "next/image";
+import Category from "../category/Category";
 
-interface Category {
+export interface CategoryItem {
   id: string;
   slug: string;
   title: string;
@@ -28,20 +29,8 @@ const CategoryList: React.FC = async () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Categorías Populares</h1>
       <div className={styles.categories}>
-        {data?.map((category: Category) => (
-          <Link
-            href="blog?cat=style"
-            className={`${styles.category} ${styles[category?.title]}`}
-          >
-            {category.img && <Image
-              src={category.img}
-              alt=""
-              width={32}
-              height={32}
-              className={styles.image}
-            />}
-            {category.slug}
-          </Link>
+        {data?.map((category: CategoryItem) => (
+          <Category category={category} />
         ))}
       </div>
     </div>
