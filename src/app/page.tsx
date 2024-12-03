@@ -4,7 +4,11 @@ import CategoryList from "@/components/categoryList/CategoryList";
 import CardList from "@/components/cardList/CardList";
 import Menu from "@/components/Menu/Menu";
 
-export default function Home() {
+interface HomeProps {
+  searchParams: string;
+}
+
+export default function Home({ searchParams }: HomeProps) {
   return (
     <div className={styles.container}>
       <Featured />
