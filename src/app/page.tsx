@@ -5,10 +5,15 @@ import CardList from "@/components/cardList/CardList";
 import Menu from "@/components/Menu/Menu";
 
 interface HomeProps {
-  searchParams: string;
+  searchParams: {
+    page: string;
+  };
 }
 
 export default function Home({ searchParams }: HomeProps) {
+
+  const page = parseInt(searchParams.page) || 1;
+
   return (
     <div className={styles.container}>
       <Featured />
