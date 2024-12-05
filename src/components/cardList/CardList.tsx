@@ -3,10 +3,11 @@ import styles from "./cardList.module.css";
 import Card from "../card/Card";
 import { getData } from "@/utils/data";
 
-interface PostData {
+export interface PostData {
   id: string;
   title: string;
   slug: string;
+  catSlug: string;
   createdAt: string;
   desc: string;
   body: string;

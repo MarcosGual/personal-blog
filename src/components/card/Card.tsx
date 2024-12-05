@@ -1,37 +1,30 @@
 import Image from "next/image";
 import styles from "./card.module.css";
 import Link from "next/link";
+import { PostData } from "../cardList/CardList";
+import { dateTimeToDate } from "@/utils/functions";
 
 interface CardProps {
-  post: {
-    id: string;
-    title: string;
-    slug: string;
-    desc: string;
-    body: string;
-    img: string;
-  };
+  post: PostData;
 }
 
 const Card: React.FC<CardProps> = ({ post }: CardProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
+        {/* poner la imagen de categorías de posteo */}
         <Image src="/p1.jpeg" alt="" className={styles.image} fill />
       </div>
       <div className={styles.textContainer}>
         <div className={styles.detail}>
-          <span>11.02.2024</span>
-          <span className={styles.category}>Cultura en Argentina</span>
+          <span>{dateTimeToDate(post.createdAt)}</span>
+          <span className={styles.category}>{post.catSlug}</span>
         </div>
         <Link href="/">
-          <h2 className="">Lorem ipsum dolor sit amet.</h2>
+          <h2 className="">{post.title}</h2>
         </Link>
         <p className={styles.description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad
-          dicta sunt inventore voluptas! Eius non repellat quibusdam rerum atque
-          sunt reiciendis. Neque exercitationem placeat omnis dignissimos eum
-          voluptatum quo.
+          {post.desc}
         </p>
         <Link href="/" className={styles.link}>
           Leer más

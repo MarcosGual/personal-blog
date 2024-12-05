@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export const GET = async (req: Request) => {
   const { searchParams } = new URL(req.url);
 
-const page = parseInt(searchParams.get('page') || "1");
+  const page = parseInt(searchParams.get('page') || "1");
 
   const POST_PER_PAGE = 3;
 
