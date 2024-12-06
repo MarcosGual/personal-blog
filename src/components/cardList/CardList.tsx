@@ -20,12 +20,16 @@ const CardList: React.FC = async () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Posts Recientes</h2>
-      <div className={styles.posts}>
-        {posts.map((post: PostData) => (
-          <Card key={post.id} post={post} />
-        ))}
-      </div>
-      <Pagination />
+      {posts.length > 0 ? (
+        <div className={styles.posts}>
+          {posts.map((post: PostData) => (
+            <Card key={post.id} post={post} />
+          ))}
+        </div>
+      ) : (
+        <h4>No hay posteos para mostrar...</h4>
+      )}
+      {posts.length > 0 && <Pagination />}
     </div>
   );
 };

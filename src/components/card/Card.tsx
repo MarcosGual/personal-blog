@@ -9,11 +9,13 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ post }: CardProps) => {
+  let imageSrc = post.img ? post.img : "/" + post.catSlug + ".jpg";
+
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         {/* poner la imagen de categorías de posteo */}
-        <Image src="/p1.jpeg" alt="" className={styles.image} fill />
+        <Image src={imageSrc} alt="" className={styles.image} fill />
       </div>
       <div className={styles.textContainer}>
         <div className={styles.detail}>
@@ -23,11 +25,9 @@ const Card: React.FC<CardProps> = ({ post }: CardProps) => {
         <Link href="/">
           <h2 className="">{post.title}</h2>
         </Link>
-        <p className={styles.description}>
-          {post.desc}
-        </p>
+        <p className={styles.description}>{post.desc}</p>
         <Link href="/" className={styles.link}>
-          Leer más
+          Leer más...
         </Link>
       </div>
     </div>
