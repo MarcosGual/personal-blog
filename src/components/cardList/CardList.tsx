@@ -14,7 +14,11 @@ export interface PostData {
   img: string;
 }
 
-const CardList: React.FC = async () => {
+interface CardListProps {
+  page: number;
+}
+
+const CardList: React.FC<CardListProps> = async ({page}: CardListProps) => {
   const posts = await getData("posts");
 
   return (
@@ -29,7 +33,7 @@ const CardList: React.FC = async () => {
       ) : (
         <h4>No hay posteos para mostrar...</h4>
       )}
-      {posts.length > 0 && <Pagination />}
+      {posts.length > 0 && <Pagination page={page} />}
     </div>
   );
 };

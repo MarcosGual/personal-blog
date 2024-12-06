@@ -1,6 +1,6 @@
 const url = "http://localhost:3000/api/";
 
-export const getData = async (endpoint: string) => {
+export const getData = async (endpoint: string, page: number) => {
   const res = await fetch(url + endpoint, {
     cache: "no-store",
   });
