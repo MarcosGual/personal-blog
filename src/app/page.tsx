@@ -19,7 +19,7 @@ export default function Home({ searchParams }: HomeProps) {
       <Featured />
       <CategoryList />
       <div className={styles.content}>
-        <CardList />
+        <CardList page={page} />
         <Menu />
       </div>
     </div>

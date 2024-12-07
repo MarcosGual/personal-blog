@@ -1,7 +1,7 @@
 import Pagination from "../pagination/Pagination";
 import styles from "./cardList.module.css";
 import Card from "../card/Card";
-import { getData } from "@/utils/data";
+import { getData, getPagesByCatData } from "@/utils/data";
 
 export interface PostData {
   id: string;
@@ -14,8 +14,12 @@ export interface PostData {
   img: string;
 }
 
-const CardList: React.FC = async () => {
-  const posts = await getData("posts");
+interface CardListProps {
+  page: number;
+}
+
+const CardList: React.FC<CardListProps> = async ({page}: CardListProps) => {
+  const posts = await getPagesByCatData(page);
 
   return (
     <div className={styles.container}>
@@ -29,7 +33,7 @@ const CardList: React.FC = async () => {
       ) : (
         <h4>No hay posteos para mostrar...</h4>
       )}
-      {posts.length > 0 && <Pagination />}
+      {posts.length > 0 && <Pagination page={page} />}
     </div>
   );
 };
