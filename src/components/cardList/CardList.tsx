@@ -1,7 +1,7 @@
 import Pagination from "../pagination/Pagination";
 import styles from "./cardList.module.css";
 import Card from "../card/Card";
-import { getData } from "@/utils/data";
+import { getData, getPagesByCatData } from "@/utils/data";
 
 export interface PostData {
   id: string;
@@ -19,7 +19,7 @@ interface CardListProps {
 }
 
 const CardList: React.FC<CardListProps> = async ({page}: CardListProps) => {
-  const posts = await getData("posts");
+  const posts = await getPagesByCatData(page);
 
   return (
     <div className={styles.container}>
