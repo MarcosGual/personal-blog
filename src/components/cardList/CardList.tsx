@@ -16,10 +16,20 @@ export interface PostData {
 
 interface CardListProps {
   page: number;
+  category?: string;
 }
 
-const CardList: React.FC<CardListProps> = async ({page}: CardListProps) => {
-  const posts = await getPagesByCatData(page);
+const CardList: React.FC<CardListProps> = async ({
+  page,
+  category,
+}: CardListProps) => {
+  console.log(category)
+  const { posts, count } = await getPagesByCatData(page, category as string);
+
+  const POST_PER_PAGE = 3;
+
+  const hasPrev = POST_PER_PAGE * (page - 1) > 0;
+  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
   return (
     <div className={styles.container}>
@@ -33,7 +43,9 @@ const CardList: React.FC<CardListProps> = async ({page}: CardListProps) => {
       ) : (
         <h4>No hay posteos para mostrar...</h4>
       )}
-      {posts.length > 0 && <Pagination page={page} />}
+      {posts.length > 0 && (
+        <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
+      )}
     </div>
   );
 };

@@ -12,9 +12,9 @@ export const getData = async (endpoint: string) => {
   return res.json();
 };
 
-export const getPagesByCatData = async (page: number) => {
+export const getPagesByCatData = async (page: number, category: string) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}`,
+    `http://localhost:3000/api/posts?page=${page}&category=${category}`,
     {
       cache: "no-store",
     }
