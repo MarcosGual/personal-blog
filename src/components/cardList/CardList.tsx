@@ -23,7 +23,6 @@ const CardList: React.FC<CardListProps> = async ({
   page,
   category,
 }: CardListProps) => {
-  console.log(category)
   const { posts, count } = await getPagesByCatData(page, category as string);
 
   const POST_PER_PAGE = 3;

@@ -4,16 +4,19 @@ import Menu from "@/components/Menu/Menu";
 
 interface BlogPageProps {
   searchParams: {
-    page: string;
+    page: any;
     category: string;
   };
 }
 
-const BlogPage: React.FC<BlogPageProps> = ({ searchParams }: BlogPageProps) => {
-  if (!searchParams) return <div>Cargando...</div>;
-  
-  const page = parseInt(searchParams.page || "1", 10);
-  const category = searchParams.category || "";
+const BlogPage: React.FC<BlogPageProps> = async ({
+  searchParams,
+}: BlogPageProps) => {
+  // if (!searchParams) return <div>Cargando...</div>;
+  let { page, category } = await searchParams;
+
+  page = parseInt(page || "1", 10);
+  category = category || "";
 
   return (
     <div className={styles.container}>
