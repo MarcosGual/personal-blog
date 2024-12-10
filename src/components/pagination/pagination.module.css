@@ -13,3 +13,9 @@
     padding: 1rem;
     background-color: crimson;
 }
+
+.button:disabled{
+    /* display: none; */
+    background-color: grey;
+    cursor: not-allowed;
+}

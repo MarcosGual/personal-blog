@@ -9,7 +9,7 @@ interface CategoryProps {
 const Category: React.FC<CategoryProps> = ({ category }: CategoryProps) => {
   return (
     <Link
-      href="blog?cat=style"
+      href={`blog?category=${category.slug}`}
       className={`${styles.category} ${styles[category?.title]}`}
     >
       {category.img && (
