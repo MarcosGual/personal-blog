@@ -12,7 +12,7 @@ interface BlogPageProps {
 const BlogPage: React.FC<BlogPageProps> = async ({
   searchParams,
 }: BlogPageProps) => {
-  // if (!searchParams) return <div>Cargando...</div>;
+
   let { page, category } = await searchParams;
 
   page = parseInt(page || "1", 10);

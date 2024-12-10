@@ -22,11 +22,11 @@ const Card: React.FC<CardProps> = ({ post }: CardProps) => {
           <span>{dateTimeToDate(post.createdAt)}</span>
           <span className={styles.category}>{post.catSlug}</span>
         </div>
-        <Link href="/">
+        <Link href={`/posts/${post.slug}`}>
           <h2 className="">{post.title}</h2>
         </Link>
         <p className={styles.description}>{post.desc}</p>
-        <Link href="/" className={styles.link}>
+        <Link href={`/posts/${post.slug}`} className={styles.link}>
           Leer más...
         </Link>
       </div>
