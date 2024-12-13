@@ -62,7 +62,7 @@ const SinglePage: React.FC<Params> = async ({ params }: Params) => {
             dangerouslySetInnerHTML={{ __html: post?.body }}
           />
           <div className={styles.comment}>
-            <Comments />
+            <Comments postSlug={searchParams.slug} />
           </div>
         </div>
         <Menu />

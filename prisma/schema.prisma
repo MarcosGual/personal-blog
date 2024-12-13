@@ -86,6 +86,7 @@ model Comment {
     createdAt DateTime @default(now())
     userEmail String
     postSlug  String
+    content   String
     user      User     @relation(fields: [userEmail], references: [email])
     post      Post     @relation(fields: [postSlug], references: [slug])
 }
