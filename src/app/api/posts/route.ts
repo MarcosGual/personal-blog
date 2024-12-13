@@ -1,5 +1,6 @@
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
+import { auth } from "../auth/[...nextauth]/auth";
 
 interface Query {
   take: number;
@@ -34,6 +35,32 @@ export const GET = async (req: Request) => {
     ]);
 
     return NextResponse.json({ posts, count }, { status: 200 });
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
+};
+
+//CREATE POST
+export const POST = async (req: Request) => {
+  const session = await auth();
+
+  if (!session)
+    return NextResponse.json(
+      { error: "Authentication Error" },
+      { status: 401 }
+    );
+
+  try {
+    const body = await req.json();
+    const post = await prisma.post.create({
+      data: {...body, userEmail: session.user?.email}
+    })
+
+    return NextResponse.json({ post }, { status: 201 });
   } catch (error) {
     console.log(error);
     return NextResponse.json(

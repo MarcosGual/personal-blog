@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
 import styles from "./writePage.module.css";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.bubble.css";
 
 const WritePage: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
+  const [file, setFile] = useState<any>(null);
 
   return (
     <div className={styles.container}>
@@ -18,13 +19,24 @@ const WritePage: React.FC = () => {
         </button>
         {open && (
           <div className={styles.add}>
+            <input
+              type="file"
+              id="image"
+              onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                if (!e.target.files) return;
+                setFile(e.target?.files[0] || null);
+              }}
+              style={{ display: "none" }}
+            />
             <button className={styles.addButton}>
-              <Image
-                src="/image.png"
-                alt="agregar imagen"
-                width={16}
-                height={16}
-              />
+              <label htmlFor="image">
+                <Image
+                  src="/image.png"
+                  alt="agregar imagen"
+                  width={16}
+                  height={16}
+                />
+              </label>
             </button>
             <button className={styles.addButton}>
               <Image
