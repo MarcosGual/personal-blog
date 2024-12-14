@@ -1,18 +1,68 @@
 "use client";
-import Image from "next/image";
 import styles from "./writePage.module.css";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.bubble.css";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { app } from "@/utils/firebase";
+import { getStorage } from "@firebase/storage";
+import { shortString, slugify, uploadFile } from "@/utils/functions";
+import Image from "next/image";
+
+const storage = getStorage(app);
 
 const WritePage: React.FC = () => {
+  const { status } = useSession();
+
+  const router = useRouter();
+
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
   const [file, setFile] = useState<any>(null);
+  const [media, setMedia] = useState<string | null>("");
+
+  useEffect(() => {
+    const upload = uploadFile(storage, file, setMedia);
+
+    file && upload;
+  }, [file]);
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/");
+    }
+  }, [status, router]); 
+
+  if (status === "unauthenticated") return null;
+
+  if (status === "loading")
+    return <div className={styles.loading}>Cargando...</div>;
+
+  const handleSubmit = async ()=>{
+    const res = await fetch("api/posts", {
+      method: "POST",
+      body: JSON.stringify({
+        title,
+        desc: shortString(value, 120),
+        body: value,
+        img: media,
+        slug: slugify(title)
+      })
+    })
+
+    console.log(res);
+  }
 
   return (
     <div className={styles.container}>
-      <input type="text" placeholder="título" className={styles.input} />
+      <input
+        type="text"
+        placeholder="título"
+        className={styles.input}
+        onChange={(e) => setTitle(e.target.value)}
+      />
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="agregar post" width={16} height={16} />
@@ -64,7 +114,7 @@ const WritePage: React.FC = () => {
           placeholder="escribí tu historia..."
         />
       </div>
-      <button className={styles.publish}>Publicar</button>
+      <button className={styles.publish} onClick={handleSubmit}>Publicar</button>
     </div>
   );
 };
