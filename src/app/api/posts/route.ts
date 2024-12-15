@@ -22,7 +22,7 @@ export const GET = async (req: Request) => {
     skip: POST_PER_PAGE * (page - 1),
   };
 
-  if (category!=='undefined') {
+  if (category !== "undefined") {
     query.where = {
       catSlug: category,
     };
@@ -35,7 +35,7 @@ export const GET = async (req: Request) => {
     ]);
 
     return NextResponse.json({ posts, count }, { status: 200 });
-  } catch (error) {
+  } catch (error: Error|any) {
     console.log(error);
     return NextResponse.json(
       { error: "Internal Server Error" },
@@ -56,15 +56,21 @@ export const POST = async (req: Request) => {
 
   try {
     const body = await req.json();
+
+    if (!body)
+      return NextResponse.json(
+        { error: "Cuerpo de petición inválido" },
+        { status: 400 }
+      );
     const post = await prisma.post.create({
-      data: {...body, userEmail: session.user?.email}
-    })
+      data: { ...body, userEmail: session.user?.email },
+    });
 
     return NextResponse.json({ post }, { status: 201 });
-  } catch (error) {
-    console.log(error);
+  } catch (error: Error|any) {
+    // console.log(error);
     return NextResponse.json(
-      { error: "Internal Server Error" },
+      { error: "Internal Server Error - " + error.message },
       { status: 500 }
     );
   }

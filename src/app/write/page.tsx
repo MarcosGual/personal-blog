@@ -20,13 +20,11 @@ const WritePage: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
   const [title, setTitle] = useState<string>("");
-  const [file, setFile] = useState<any>(null);
+  const [file, setFile] = useState<any>();
   const [media, setMedia] = useState<string | null>("");
 
   useEffect(() => {
-    const upload = uploadFile(storage, file, setMedia);
-
-    file && upload;
+    file && uploadFile(storage, file, setMedia);
   }, [file]);
 
   useEffect(() => {
@@ -48,11 +46,16 @@ const WritePage: React.FC = () => {
         desc: shortString(value, 120),
         body: value,
         img: media,
-        slug: slugify(title)
+        slug: slugify(title),
       })
     })
 
     console.log(res);
+
+    if (res.status === 200) {
+      const data = await res.json();
+      router.push(`/posts/${data.slug}`);
+    }
   }
 
   return (
