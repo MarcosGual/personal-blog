@@ -47,12 +47,14 @@ const WritePage: React.FC = () => {
         body: value,
         img: media,
         slug: slugify(title),
+        catSlug: "economia",
+        hashtags: ["blabla"]
       })
     })
 
     console.log(res);
 
-    if (res.status === 200) {
+    if (res.status === 201) {
       const data = await res.json();
       router.push(`/posts/${data.slug}`);
     }

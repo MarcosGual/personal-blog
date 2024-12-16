@@ -13,7 +13,6 @@ export const GET = async (req: Request) => {
 
   const page = parseInt(searchParams.get("page") || "1");
   const category = searchParams.get("category") || "";
-  console.log(category);
 
   const POST_PER_PAGE = 3;
 
@@ -68,7 +67,7 @@ export const POST = async (req: Request) => {
 
     return NextResponse.json({ post }, { status: 201 });
   } catch (error: Error|any) {
-    // console.log(error);
+    console.log(error);
     return NextResponse.json(
       { error: "Internal Server Error - " + error.message },
       { status: 500 }
