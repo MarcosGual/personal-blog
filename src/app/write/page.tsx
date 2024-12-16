@@ -31,14 +31,14 @@ const WritePage: React.FC = () => {
     if (status === "unauthenticated") {
       router.push("/");
     }
-  }, [status, router]); 
+  }, [status, router]);
 
   if (status === "unauthenticated") return null;
 
   if (status === "loading")
     return <div className={styles.loading}>Cargando...</div>;
 
-  const handleSubmit = async ()=>{
+  const handleSubmit = async () => {
     const res = await fetch("api/posts", {
       method: "POST",
       body: JSON.stringify({
@@ -48,9 +48,9 @@ const WritePage: React.FC = () => {
         img: media,
         slug: slugify(title),
         catSlug: "economia",
-        hashtags: ["blabla"]
-      })
-    })
+        hashtags: ["blabla"],
+      }),
+    });
 
     console.log(res);
 
@@ -58,7 +58,7 @@ const WritePage: React.FC = () => {
       const data = await res.json();
       router.push(`/posts/${data.slug}`);
     }
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -119,7 +119,9 @@ const WritePage: React.FC = () => {
           placeholder="escribí tu historia..."
         />
       </div>
-      <button className={styles.publish} onClick={handleSubmit}>Publicar</button>
+      <button className={styles.publish} onClick={handleSubmit}>
+        Publicar
+      </button>
     </div>
   );
 };
