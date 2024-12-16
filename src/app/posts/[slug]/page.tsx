@@ -9,7 +9,7 @@ import { dateTimeToDate } from "@/utils/functions";
 const SinglePage: React.FC<Params> = async ({ params }: Params) => {
   const searchParams = await params;
 
-  let { post } = await getData(`/posts/${searchParams.slug}`);
+  let { post } = await getData(`/posts/${searchParams.slug}`); //?popular=true
   // console.log(post);
 
   if (!post || post === "undefined") {

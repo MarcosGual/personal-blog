@@ -58,13 +58,13 @@ model Post {
     desc      String?
     body      String
     img       String?
+    userEmail String
     views     Int       @default(0)
     likes     Int       @default(0)
     catSlug   String
     hashtags  String[]
     cat       Category  @relation(fields: [catSlug], references: [slug])
-    author    User      @relation(fields: [authorId], references: [id])
-    authorId  String
+    author    User      @relation(fields: [userEmail], references: [email])
     comments  Comment[]
 }
 
