@@ -1,0 +1,27 @@
+.theme-toggle {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--bg-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .theme-icon {
+    color: var(--icon-light);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Modo oscuro */
+  .dark-toggle .theme-toggle {
+    background-color: var(--bg-dark);
+  }
+  
+  .dark-icon .theme-icon {
+    color: var(--icon-dark);
+  }

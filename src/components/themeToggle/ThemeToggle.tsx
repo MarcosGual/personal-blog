@@ -1,20 +1,35 @@
-"use client"
-import { useContext } from "react";
+"use client";
+
 import { Sun, Moon } from "lucide-react";
-// import styles from "./themeToggle.module.css";
-// import { DarkSide } from "@theme-toggles/react";
-import { ThemeContext } from "@/context/ThemeContext";
+import { motion } from "framer-motion";
 import { useThemeContext } from "@/hooks/useThemeContext";
 
 const ThemeToggle: React.FC = () => {
-    const { darkThemeOn, toggle } = useThemeContext();
+  const { darkThemeOn, toggle } = useThemeContext();
 
-    return (<div>
-        {/* <DarkSide duration={750} toggled={!darkThemeOn} toggle={toggle} /> */}
-        <button onClick={() => toggle(darkThemeOn? false : true)}>
-      {darkThemeOn ? <Sun size={24} /> : <Moon size={24} />}
+  return (
+
+    <button
+      onClick={() => toggle(darkThemeOn ? false : true)}
+      className={`theme-toggle ${darkThemeOn? "dark-toggle":null}`}
+    >
+      <motion.div
+        animate={{
+          rotate: darkThemeOn ? 180 : 0,
+          scale: darkThemeOn ? 0.8 : 1,
+        }}
+        transition={{ duration: 0.3 }}
+        className={`theme-icon ${darkThemeOn? "dark-icon":null}`}
+        // style={{paddingBottom: 10}}
+      >
+        {darkThemeOn ? (
+          <Sun size={26} style={{color: "#facc15", fontWeight: "bolder"}} />
+        ) : (
+          <Moon size={26} />
+        )}
+      </motion.div>
     </button>
-    </div>)
-}
+  );
+};
 
 export default ThemeToggle;
