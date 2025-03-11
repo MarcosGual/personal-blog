@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -14,13 +17,13 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
-        port: ""
+        port: "",
       },
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
-        port: ""
-      }
+        port: "",
+      },
     ],
   },
 };

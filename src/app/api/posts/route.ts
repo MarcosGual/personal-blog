@@ -21,7 +21,7 @@ export const GET = async (req: Request) => {
     skip: POST_PER_PAGE * (page - 1),
   };
 
-  if (category !== "undefined") {
+  if (typeof category !== "undefined") {
     query.where = {
       catSlug: category,
     };
