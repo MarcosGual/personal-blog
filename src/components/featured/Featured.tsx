@@ -5,7 +5,7 @@ const Featured: React.FC = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>
-                <b>Hola, soy Marcos!</b> Descubrí historias e ideas creativas.
+                <b>Programación Pragmática</b> (un blog con de todo).
             </h1>
             <div className={styles.post}>
                 <div className={styles.imgContainer}>
