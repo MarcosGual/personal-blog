@@ -1,7 +1,7 @@
 const url = process.env.URL;
 
 export const getData = async (endpoint: string) => {
-  const res = await fetch(url + endpoint, {
+  const res = await fetch(url + "/api/" + endpoint, {
     cache: "no-store",
   });
 
@@ -14,7 +14,7 @@ export const getData = async (endpoint: string) => {
 
 export const getPagesByCatData = async (page: number, category: string) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&category=${category}`,
+    `${url}/api/posts?page=${page}&category=${category}`,
     {
       cache: "no-store",
     }
