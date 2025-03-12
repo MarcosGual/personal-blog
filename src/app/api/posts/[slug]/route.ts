@@ -1,7 +1,7 @@
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
-export type tParams = Promise<{ slug: string }>;
+export type tParams = { slug: string };
 
 export const GET = async (req: Request, props: { params: Promise<tParams> }) => {
   const { slug } = await props.params;
