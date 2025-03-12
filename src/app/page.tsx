@@ -5,12 +5,13 @@ import CardList from "@/components/cardList/CardList";
 import Menu from "@/components/Menu/Menu";
 
 interface HomeProps {
-  searchParams: {
+  searchParams: Promise<{
     page: string;
-  };
+  }>;
 }
 
-export default function Home({ searchParams }: HomeProps) {
+export default async function Home(props: HomeProps) {
+  const searchParams = await props.searchParams;
 
   const page = parseInt(searchParams.page) || 1;
 

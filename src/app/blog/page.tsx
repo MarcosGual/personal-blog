@@ -3,15 +3,14 @@ import styles from "./blogPage.module.css";
 import Menu from "@/components/Menu/Menu";
 
 interface BlogPageProps {
-  searchParams: {
+  searchParams: Promise<{
     page: any;
     category: string;
-  };
+  }>;
 }
 
-const BlogPage: React.FC<BlogPageProps> = async ({
-  searchParams,
-}: BlogPageProps) => {
+const BlogPage: React.FC<BlogPageProps> = async (props: BlogPageProps) => {
+  const searchParams = await props.searchParams;
 
   let { page, category } = searchParams;
 

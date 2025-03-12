@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export type tParams = Promise<{ slug: string }>;
 
-export const GET = async (req: Request, props: { params: tParams }) => {
+export const GET = async (req: Request, props: { params: Promise<tParams> }) => {
   const { slug } = await props.params;
 
   try {
