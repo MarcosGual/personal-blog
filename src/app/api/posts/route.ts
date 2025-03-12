@@ -5,7 +5,7 @@ import { auth } from "../auth/[...nextauth]/auth";
 interface Query {
   take: number;
   skip: number;
-  where?: any;
+  where?: object;
 }
 
 export const GET = async (req: Request) => {
@@ -16,7 +16,7 @@ export const GET = async (req: Request) => {
 
   const POST_PER_PAGE = 3;
 
-  let query: Query = {
+  const query: Query = {
     take: POST_PER_PAGE,
     skip: POST_PER_PAGE * (page - 1),
   };
@@ -34,8 +34,16 @@ export const GET = async (req: Request) => {
     ]);
 
     return NextResponse.json({ posts, count }, { status: 200 });
-  } catch (error: Error|any) {
+  } catch (error: unknown) {
     console.log(error);
+    
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { error: "Internal Server Error - " + error.message },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 }
@@ -66,10 +74,18 @@ export const POST = async (req: Request) => {
     });
 
     return NextResponse.json({ post }, { status: 201 });
-  } catch (error: Error|any) {
+  } catch (error: unknown) {
     console.log(error);
+    
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { error: "Internal Server Error - " + error.message },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
-      { error: "Internal Server Error - " + error.message },
+      { error: "Internal Server Error" },
       { status: 500 }
     );
   }

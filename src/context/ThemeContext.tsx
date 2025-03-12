@@ -1,7 +1,7 @@
 "use client"
 
 import { ChildrenProps } from "@/types/react";
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 type ThemeContextType = {
     darkThemeOn: boolean | null,

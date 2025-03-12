@@ -4,7 +4,7 @@ import styles from "./loginPage.module.css";
 import { redirect } from "next/navigation";
 
 const LoginPage: React.FC = () => {
-  const { data, status } = useSession();
+  const { status } = useSession();
 //   const router = useRouter();
   // console.log(data, status);
 

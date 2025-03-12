@@ -9,7 +9,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ post }: CardProps) => {
-  let imageSrc = post.img ? post.img : "/" + post.catSlug + ".jpg";
+  const imageSrc = post.img ? post.img : "/" + post.catSlug + ".jpg";
 
   return (
     <div className={styles.container}>

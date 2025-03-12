@@ -15,5 +15,5 @@ if (typeof window === "undefined") {
     prisma = global.prisma;
   }
 }
-//@ts-ignore
+
 export default prisma;

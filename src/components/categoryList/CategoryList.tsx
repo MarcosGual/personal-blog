@@ -1,6 +1,4 @@
-import Link from "next/link";
 import styles from "./categoryList.module.css";
-import Image from "next/image";
 import Category from "../category/Category";
 import { getData } from "@/utils/data";
 

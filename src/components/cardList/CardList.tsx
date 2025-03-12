@@ -1,7 +1,7 @@
 import Pagination from "../pagination/Pagination";
 import styles from "./cardList.module.css";
 import Card from "../card/Card";
-import { getData, getPagesByCatData } from "@/utils/data";
+import { getPagesByCatData } from "@/utils/data";
 
 export interface PostData {
   id: string;

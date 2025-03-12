@@ -1,6 +1,5 @@
 'use client'
 
-import { getFromLocalStorage } from "@/context/ThemeContext";
 import { useThemeContext } from "@/hooks/useThemeContext"
 import { ChildrenProps } from "@/types/react";
 import { useEffect, useState } from "react";

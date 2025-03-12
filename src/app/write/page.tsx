@@ -20,11 +20,13 @@ const WritePage: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
   const [title, setTitle] = useState<string>("");
-  const [file, setFile] = useState<any>();
+  const [file, setFile] = useState<File | null>(null);
   const [media, setMedia] = useState<string | null>("");
 
   useEffect(() => {
-    file && uploadFile(storage, file, setMedia);
+    if (file) {
+      uploadFile(storage, file, setMedia);
+    }
   }, [file]);
 
   useEffect(() => {

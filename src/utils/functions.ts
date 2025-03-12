@@ -1,4 +1,6 @@
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL, FirebaseStorage } from "firebase/storage";
+
+type MediaSetter = (url: string) => void;
 
 export const dateTimeToDate = (str: string) => {
   return str.slice(0, 10).split("-").reverse().join("-");
@@ -23,7 +25,7 @@ export const shortString = (str: string, words: number): string | null => {
   return null; 
 };
 
-export const uploadFile = (storage: any, file: File, mediaSetter: Function) => {
+export const uploadFile = (storage: FirebaseStorage, file: File, mediaSetter: MediaSetter) => {
   const uniqueName = new Date().getTime() + file.name;
   const storageRef = ref(storage, uniqueName);
 
