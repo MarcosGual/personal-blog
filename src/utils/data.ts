@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/api/";
+const url = process.env.PROD_URL || "http://localhost:3000/api/";
 
 export const getData = async (endpoint: string) => {
   const res = await fetch(url + endpoint, {
