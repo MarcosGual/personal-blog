@@ -1,7 +1,7 @@
 const url = process.env.URL;
 
 export const getData = async (endpoint: string) => {
-  const res = await fetch(url + "/api/" + endpoint, {
+  const res = await fetch(`${url}/api/${endpoint}`, {
     cache: "no-store",
   });
 
