@@ -3,10 +3,10 @@ import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 import { getData } from "@/utils/data";
-import { Params } from "@/app/api/posts/[slug]/route";
+import { tParams } from "@/app/api/posts/[slug]/route";
 import { dateTimeToDate } from "@/utils/functions";
 
-const SinglePage: React.FC<Params> = async ({ params }: Params) => {
+const SinglePage: React.FC<tParams> = async (params: tParams) => {
   const searchParams = await params;
 
   let { post } = await getData(`/posts/${searchParams.slug}`); //?popular=true

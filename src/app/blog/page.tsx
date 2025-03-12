@@ -13,7 +13,7 @@ const BlogPage: React.FC<BlogPageProps> = async ({
   searchParams,
 }: BlogPageProps) => {
 
-  let { page, category } = await searchParams;
+  let { page, category } = searchParams;
 
   page = parseInt(page || "1", 10);
   category = category || "";
