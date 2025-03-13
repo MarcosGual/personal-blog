@@ -10,8 +10,8 @@ import AuthProvider from "@/providers/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Blog App",
-  description: "De todo un poco",
+  title: "Programación Pragmática",
+  description: "Blog de programación, economía, política, historia, fútbol y más...",
 };
 
 export default function RootLayout({

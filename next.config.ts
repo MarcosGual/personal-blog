@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-module.exports = {
+const nextConfig: NextConfig = {
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -8,9 +8,6 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-}
-
-const nextConfig: NextConfig = {
   /* config options here */
   eslint: {
     ignoreDuringBuilds: true,
@@ -28,12 +25,20 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
         port: "",
+        //pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "assets.vercel.com",
+        port: "",
+        pathname: "/image/upload/**",
+        search: "",
+      }
     ],
   },
 };

@@ -6,10 +6,18 @@ import { getData } from "@/utils/data";
 import { Params } from "@/app/api/posts/[slug]/route";
 import { dateTimeToDate } from "@/utils/functions";
 
-const SinglePage: React.FC<Params> = async (params : Params) => {
-  const searchParams = await params;
+const SinglePage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) => {
+  const { slug } = await params;
+  console.log("parámetros de búsqueda:", slug)
 
-  const { post } = await getData(`/posts/${searchParams.slug}`); //?popular=true
+  if (!slug) {
+    return <div>Error 404 - Página No Encontrada</div>;
+  }
+  const { post } = await getData(`posts/${slug}`); //?popular=true
   // console.log(post);
 
   if (!post || post === "undefined") {
@@ -62,7 +70,7 @@ const SinglePage: React.FC<Params> = async (params : Params) => {
             dangerouslySetInnerHTML={{ __html: post?.body }}
           />
           <div className={styles.comment}>
-            <Comments postSlug={searchParams.slug} />
+            <Comments postSlug={slug} />
           </div>
         </div>
         <Menu />
