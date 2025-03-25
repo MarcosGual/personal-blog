@@ -1,4 +1,4 @@
-# Blog Personal con Next.js, Prisma y Google Auth
+# Blog Personal
 
 Este es un proyecto de **blog personal** desarrollado con **Next.js** y autenticación con **Google** mediante `next-auth`. Los datos se gestionan con **Prisma** y se almacenan en **MongoDB**.
 
