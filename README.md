@@ -45,7 +45,7 @@ Este es un proyecto de **blog personal** desarrollado con **Next.js** y autentic
 
 ### Estructura de la Aplicación
 
-![imagen](https://github.com/user-attachments/assets/41074985-7760-47c0-ab6d-8ac11582a30c)
+![diagram-export-5-4-2025-09_39_16](https://github.com/user-attachments/assets/e8abee7e-a83c-4142-bfd4-1b41a58b0ba3)
 
 ### 🔧 Configuración Inicial
 
