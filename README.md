@@ -43,6 +43,10 @@ Este es un proyecto de **blog personal** desarrollado con **Next.js** y autentic
 
 ---
 
+### Estructura de la Aplicación
+
+![imagen](https://github.com/user-attachments/assets/41074985-7760-47c0-ab6d-8ac11582a30c)
+
 ### 🔧 Configuración Inicial
 
 #### 1️⃣ Clonar el Repositorio
