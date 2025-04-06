@@ -37,6 +37,8 @@ Este es un proyecto de **blog personal** desarrollado con **Next.js** y autentic
 │── tsconfig.json             # Configuración de TypeScript
 │── next.config.mjs           # Configuración de Next.js
 ```
+---
+
 ### Diagrama de Clases
 
 ![diagram-export-5-4-2025-09_37_24](https://github.com/user-attachments/assets/6188ac79-c814-49f5-986c-cf7d3cc4a3ff)
